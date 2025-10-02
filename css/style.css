@@ -1,9 +1,9 @@
-/********** Template CSS **********/
+/********** Template CSS ATUALIZADO **********/
 :root {
-    --primary: #5B8C51;
-    --secondary: #EDDD5E;
+    --primary: #800000; /* Vinho */
+    --secondary: #000080; /* Azul Marinho */
     --light: #F7F7F7;
-    --dark: #404A3D;
+    --dark: #212529; /* Cinza Escuro Neutro */
 }
 
 .back-to-top {
@@ -55,7 +55,7 @@
 
 .btn-secondary,
 .btn-outline-secondary:hover {
-    color: var(--dark);
+    color: var(--light);
 }
 
 .btn-square {
@@ -200,7 +200,7 @@
 }
 
 
-/*** Section Title ***/
+/*** Section Title -- ATUALIZADO ***/
 .section-title {
     position: relative;
     display: inline-block;
@@ -215,7 +215,7 @@
     height: 2px;
     top: 5px;
     left: -40px;
-    background: var(--primary);
+    background: var(--primary); /* Linha vinho */
     z-index: -1;
 }
 
@@ -226,7 +226,7 @@
     height: 2px;
     bottom: 6px;
     left: -60px;
-    background: var(--primary);
+    background: var(--secondary); /* ATUALIZADO: Linha azul marinho */
     z-index: -1;
 }
 
@@ -332,9 +332,10 @@
 
 .service-item:hover .service-text h5,
 .service-item:hover .service-text p,
-.service-item:hover .service-text ul.mb-4 li {
-    color: #FFFFFF;
+.service-item:hover .service-text ul li {
+    color: #FFFFFF !important;
 }
+
 
 
 .service-item .service-text .btn {
@@ -344,7 +345,7 @@
 }
 
 .service-item .service-text .btn:hover {
-    color: var(--dark);
+    color: var(--light);
     background: var(--secondary);
 }
 
@@ -471,13 +472,22 @@
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
     background: var(--secondary);
-    color: var(--dark);
+    color: var(--light);
 }
 
 
-/*** Footer ***/
+/*** Footer -- ATUALIZADO ***/
 .footer {
-    color: #B0B9AE;
+    background: var(--primary); /* ATUALIZADO: Fundo do rodapé na cor vinho */
+    color: rgba(247, 247, 247, 0.8); /* ATUALIZADO: Cor de texto clara para contraste */
+}
+
+/* NOVO: Estilo para os títulos (h4) dentro do rodapé */
+.footer h4 {
+    color: var(--light);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary); /* NOVO: Detalhe em azul marinho */
+    display: inline-block;
 }
 
 .footer .btn.btn-link {
@@ -485,7 +495,7 @@
     margin-bottom: 5px;
     padding: 0;
     text-align: left;
-    color: #B0B9AE;
+    color: rgba(247, 247, 247, 0.8); /* ATUALIZADO: Cor de link clara para contraste */
     font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
@@ -500,7 +510,24 @@
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--light);
+    color: var(--light); /* ATUALIZADO: Cor ao passar o mouse */
     letter-spacing: 1px;
     box-shadow: none;
 }
+
+/* NOVO: Estilo para os botões de redes sociais no rodapé */
+.footer .btn.btn-square {
+    color: var(--light);
+    border: 1px solid var(--light);
+}
+
+.footer .btn.btn-square:hover {
+    color: var(--primary);
+    background: var(--light);
+}
+/* Forçar Bootstrap a usar suas cores personalizadas */
+.text-primary { color: var(--primary) !important; }
+.bg-primary { background-color: var(--primary) !important; }
+
+.text-secondary { color: var(--secondary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
