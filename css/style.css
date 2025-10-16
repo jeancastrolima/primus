@@ -531,3 +531,65 @@
 
 .text-secondary { color: var(--secondary) !important; }
 .bg-secondary { background-color: var(--secondary) !important; }
+
+
+
+/* =================================== */
+/* CSS para a Galeria Profissional     */
+/* =================================== */
+
+/* Contêiner de cada item da galeria */
+.gallery-item {
+    position: relative; /* Essencial para posicionar o overlay */
+    overflow: hidden;   /* Esconde o excesso da imagem durante o zoom */
+    cursor: pointer;
+    border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    height: 100%;
+}
+
+/* A imagem dentro do item */
+.gallery-item img {
+    transition: transform 0.4s ease; /* Animação suave de zoom */
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço sem distorcer */
+}
+
+/* O efeito de zoom ao passar o mouse */
+.gallery-item:hover img {
+    transform: scale(1.1); /* Aumenta a imagem em 10% */
+}
+
+/* O overlay (camada escura) que aparece no hover */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Cor do overlay - ajuste a opacidade (0.6) se desejar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.4s ease; /* Animação suave de fade-in */
+}
+
+/* Torna o overlay visível ao passar o mouse */
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Estilo do ícone dentro do overlay */
+.gallery-overlay i {
+    color: #fff;
+    font-size: 32px; /* Tamanho do ícone */
+}
+
+/* Ajuste no espaçamento da coluna para dar respiro entre as imagens */
+.g-0 .col-12 {
+    padding: 8px; /* Adiciona um espaçamento interno */
+}
+.g-0 {
+    margin: -8px; /* Compensa o padding adicionado */
+}
